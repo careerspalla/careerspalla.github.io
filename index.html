@@ -3,22 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Company Home Page</title>
+    <title>DayCatch Fish & Chips</title>
     <style>
-        body {
-            background-color: black;
-            color: white; /* Makes text readable against the black background */
+        /* Base page layout resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    </style>	
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #333;
+        }
+
+        /* Header block styling */
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Horizontal Menu Row */
+        .navbar {
+            background-color: #34495e;
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        .nav-list li a {
+            display: block;
+            color: #bdc3c7;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        /* Active or hovered links turn green */
+        .nav-list li a.active, .nav-list li a:hover {
+            color: white;
+            background-color: #c98508;
+        }
+
+        /* Content block layout spacing */
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-height: 250px;
+        }
+        main h2 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        /* --- THE CRITICAL TABS CSS --- */
+        .tab-content {
+            display: none; /* Ensures all sections remain hidden by default */
+        }
+        .tab-content.active {
+            display: block; /* Only displays the single item with the active state */
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #ffffff;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Header Section -->
     <header>
-        <img src="images/FC_Logo.jpeg" alt="Company Logo" width="150">
-        <h1>Welcome to DayCatch Fish & Chips</h1>
+        <h1><img src="images/FCLogoforDoc.jpeg" alt="Company Logo" width="150"></h1>
     </header>
-    
+
+    <!-- Horizontal Navigation Menu -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="#" class="tab-link active" data-target="home">Home</a></li>
+            <li><a href="#" class="tab-link" data-target="about">About</a></li>
+            <li><a href="#" class="tab-link" data-target="branches">Our Franchises</a></li>
+            <li><a href="#" class="tab-link" data-target="menu">Our Menu</a></li>
+            <li><a href="#" class="tab-link" data-target="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Sections Wrapper -->
     <main>
-        <p>Taste the difference.</p>
+        <!-- Home Section (Active on startup) -->
+        <section id="home" class="tab-content active">
+            <h2>Welcome to DayCatch Fish & Chips</h2>
+            <p>Vision: Build India's most trusted seafood QSR chain.</p>
+            <p>Mission: Deliver standardized seafood products through a scalable franchise ecosystem.</p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="tab-content">
+            <h2>About Us</h2>
+            <p>Fish & Chips is a fast-casual seafood QSR brand focused on delivering high-quality seafood snacks and quick-service products through a scalable plug-and-play franchise model. 
+                The business is designed for rapid expansion across India through a simplified operational structure, centralized product preparation, and strong branding support.</p>
+        </section>
+
+        <!-- Our Branches Section -->
+        <section id="branches" class="tab-content">
+            <h3>Our Franchise Locations</h3>
+                <ul>
+                    <!-- State 1 -->
+                    <li><strong>Andhra Pradesh</strong>
+                        <ul>
+                            <li>Repalle</li>
+                            <li>Gunthakal</li>
+                            <li>Karnool</li>
+                            <li>Aadoni</li>
+                        </ul>
+                    </li> <!-- Make sure to close the state item AFTER the nested list -->
+
+                    <!-- State 2 -->
+                    <li><strong>Karnataka</strong>
+                        <ul>
+                        <li>Bellary</li>
+                    </ul>
+                    <li><strong>Telangana</strong>
+                        <ul>
+                            <li>Hyderabad - Sainikpuri</li>
+                            <li>Hyderabad - Pragathi Nagar</li>
+                        </ul>
+                    </li>
+                </ul>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="tab-content">
+            <h3>Our Menu</h3>
+                <ul>
+                    <!-- State 1 -->
+                    <li><strong>Fish Fillet</strong>
+                        <ul>
+                            <li>Garlic</li>
+                            <li>Masala</li>
+                        </ul>
+                    </li> <!-- Make sure to close the state item AFTER the nested list -->
+
+                    <!-- State 2 -->
+                    <li><strong>Fish Fingers</strong>
+                        <ul>
+                            <li>Garlic</li>
+                            <li>Masala</li>
+                        </ul>
+                    <li><strong>Prawn Butterfly</strong>
+                        <ul>
+                            <li>Garlic</li>
+                            <li>Masala</li>
+                        </ul>
+                    </li>
+                    <li><strong>Prawn Torpedo</strong>
+                        <ul>
+                            <li>Garlic</li>
+                            <li>Masala</li>
+                        </ul>
+                    </li>
+                </ul>        
+            </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="tab-content">
+            <h2>Get In Touch</h2>
+            <p>Have questions? Fill out our contact form or shoot us an email directly at daycatch@gmail.com.</p>
+        </section>
     </main>
+
+    <!-- Footer Copyright Block -->
+    <footer>
+        <p>Copyright © DayCatch Fish & Chips VN Aqua RAS Pvt Ltd. 2026 All rights reserved</p>
+    </footer>
+
+    <!-- --- THE CRITICAL JAVASCRIPT SWITCH --- -->
+    <script>
+        const links = document.querySelectorAll('.tab-link');
+        const contents = document.querySelectorAll('.tab-content');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevents standard link jumps
+
+                // Step A: Reset active styling on menu tabs
+                links.forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+
+                // Step B: Hide all text body panels 
+                contents.forEach(box => box.classList.remove('active'));
+
+                // Step C: target and show the single clicked content matching ID
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
