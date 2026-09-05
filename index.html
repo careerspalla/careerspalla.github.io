@@ -3,214 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DayCatch Fish & Chips</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>DayCatch Fish & Chips | Fresh, Crisp, British Standard</title>
+    <!-- Bootstrap 5.3 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        /* Base page layout resets */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary-navy: #0F2C59;
+            --accent-gold: #DAC0A3;
+            --soft-white: #F8F0E5;
+            --text-dark: #102A43;
         }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000000;
-            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            scroll-behavior: smooth;
         }
-
-        /* Header block styling */
-        header {
-            background-color: #000000;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
         }
-
-        /* Horizontal Menu Row */
-        .navbar {
-            background-color: #34495e;
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy) !important;
+            font-size: 1.6rem;
         }
-        .nav-list {
-            display: flex;
-            list-style: none;
-            justify-content: center;
+        .hero-section {
+            background: linear-gradient(rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.85)), url('images/hero-bg.jpg') center/cover no-repeat;
+            color: var(--soft-white);
+            padding: 140px 0 100px;
         }
-        .nav-list li a {
-            display: block;
-            color: #bdc3c7;
-            text-decoration: none;
-            padding: 15px 25px;
-            font-weight: bold;
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--primary-navy);
+            font-weight: 600;
+            border: none;
             transition: all 0.3s ease;
         }
-        /* Active or hovered links turn green */
-        .nav-list li a.active, .nav-list li a:hover {
-            color: white;
-            background-color: #c98508;
+        .btn-gold:hover {
+            background-color: #c9af92;
+            color: var(--primary-navy);
+            transform: translateY(-2px);
         }
-
-        /* Content block layout spacing */
-        main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 25px;
-            background-color: white;
+        .btn-outline-navy {
+            border: 2px solid var(--primary-navy);
+            color: var(--primary-navy);
+            font-weight: 600;
+        }
+        .btn-outline-navy:hover {
+            background-color: var(--primary-navy);
+            color: #fff;
+        }
+        .section-title {
+            position: relative;
+            margin-bottom: 45px;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+        .menu-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+        .menu-img-wrapper {
+            height: 240px;
+            overflow: hidden;
+            background-color: #eaeaea; /* Fallback frame */
+        }
+        .menu-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .location-card {
+            border: 1px solid rgba(15, 44, 89, 0.1);
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+        .map-container {
+            height: 200px;
+            background-color: #e5e3df;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            min-height: 250px;
+            overflow: hidden;
         }
-        main h2 {
-            margin-bottom: 15px;
-            color: #2c3e50;
+        .franchise-banner {
+            background-color: var(--soft-white);
+            border-left: 5px solid var(--primary-navy);
+            border-radius: 0 12px 12px 0;
         }
-
-        /* --- THE CRITICAL TABS CSS --- */
-        .tab-content {
-            display: none; /* Ensures all sections remain hidden by default */
-        }
-        .tab-content.active {
-            display: block; /* Only displays the single item with the active state */
-        }
-
-        /* Footer Section */
         footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #ffffff;
-            margin-top: 40px;
+            background-color: var(--primary-navy);
+            color: var(--soft-white);
+        }
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <h1><img src="images/FCLogoforDoc.jpeg" alt="Company Logo" width="150"></h1>
-    </header>
-
-    <!-- Horizontal Navigation Menu -->
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="#" class="tab-link active" data-target="home">Home</a></li>
-            <li><a href="#" class="tab-link" data-target="about">About</a></li>
-            <li><a href="#" class="tab-link" data-target="branches">Our Franchises</a></li>
-            <li><a href="#" class="tab-link" data-target="menu">Our Menu</a></li>
-            <li><a href="#" class="tab-link" data-target="contact">Contact</a></li>
-        </ul>
+    <!-- STICKY NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-water text-primary me-2"></i>DayCatch <span class="text-secondary fw-normal">Fish & Chips</span>
+            </a>
+            <button class="navbar-expand-lg navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3 fw-semibold text-dark" href="#menu">Our Menu</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 fw-semibold text-dark" href="#locations">Locations</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 fw-semibold text-dark" href="#partner">Franchise Business</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-gold px-4 py-2" href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <!-- Content Sections Wrapper -->
-    <main>
-        <!-- Home Section (Active on startup) -->
-        <section id="home" class="tab-content active">
-            <h2>Welcome to DayCatch Fish & Chips</h2>
-            <p>Vision: Build India's most trusted seafood QSR chain.</p>
-            <p>Mission: Deliver standardized seafood products through a scalable franchise ecosystem.</p>
-        </section>
+    <!-- HERO SECTION -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <span class="text-uppercase tracking-wider fw-bold text-warning mb-2 d-inline-block">India’s Next-Gen Seafood QSR</span>
+                    <h1 class="display-3 mb-3 fw-bold">Premium Seafood Snacks. Maximum Crunch.</h1>
+                    <p class="lead mb-4 font-serif italic text-light opacity-90">Savour our signature golden-crisp fish fillets and hot rustic chips—crafted for the ultimate fast-casual snack experience. High-quality seafood, served hot and fast, every single time.</p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="#menu" class="btn btn-gold btn-lg px-4 py-3 me-sm-2">Explore Our Menu</a>
+                        <a href="#partner" class="btn btn-outline-light btn-lg px-4 py-3">Own a Franchise</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <!-- About Section -->
-        <section id="about" class="tab-content">
-            <h2>About Us</h2>
-            <p>Fish & Chips is a fast-casual seafood QSR brand focused on delivering high-quality seafood snacks and quick-service products through a scalable plug-and-play franchise model. 
-                The business is designed for rapid expansion across India through a simplified operational structure, centralized product preparation, and strong branding support.</p>
-        </section>
+    <!-- SIGNATURE MENU SECTION -->
+    <section id="menu" class="py-5 bg-light">
+        <div class="container py-4">
+            <h2 class="text-center section-title display-5">Signature Menu</h2>
+            <p class="text-center text-muted mb-5 max-width-md mx-auto">Crafted for maximum flavor and fried to a spectacular crunch right when you order. Delicious, sizzling hot, and made to satisfy your seafood cravings instantly.</p>
+            
+            <div class="row g-4">
+                <!-- Item 1: Classic Fish & Chips -->
+                <div class="col-md-4">
+                    <div class="menu-card card">
+                        <div class="menu-img-wrapper">
+                            <!-- REPLACE src WITH YOUR FILE NAME, e.g., images/classic-fish.jpg -->
+                            <img src="images/fishchips/FishFillet.jpeg" alt="Fish Fingers">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h5 fw-bold mb-2">Garlic & Masala Fish Fillet</h3>
+                            <p class="text-muted small">Expertly marinated fish fillets coated in a golden, crispy breading. Flaky on the inside and packed with your choice of savory garlic or bold masala, it is the ultimate crunchy seafood snack.</p>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Our Branches Section -->
-        <section id="branches" class="tab-content">
-            <h3>Our Franchise Locations</h3>
-                <ul class="minimal-list">
-                    <!-- State 1 -->
-                    <li><strong>Andhra Pradesh</strong>
-                        <ul>
-                            <li>Repalle</li>
-                            <li>Gunthakal</li>
-                            <li>Karnool</li>
-                            <li>Aadoni</li>
-                        </ul>
-                    </li> <!-- Make sure to close the state item AFTER the nested list -->
+                <!-- Item 2: Golden Crispy Prawns -->
+                <div class="col-md-4">
+                    <div class="menu-card card">
+                        <div class="menu-img-wrapper">
+                            <img src="images/fishchips/FishFingers.jpeg" alt="Fish Fingers">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h5 fw-bold mb-2">Crunchy Fish Fingers</h3>
+                            <p class="text-muted small">Tender fish fillets cut into perfect bite-sized strips and coated in a golden, ultra-crispy crumb. Flaky on the inside with a satisfying crunch, they make for an irresistible, savory snack paired perfectly with your favorite dipping sauce.</p>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- State 2 -->
-                    <li><strong>Karnataka</strong>
-                        <ul>
-                        <li>Bellary</li>
+                <!-- Item 3: Fisherman's Platter -->
+                <div class="col-md-4">
+                    <div class="menu-card card">
+                        <div class="menu-img-wrapper">
+                            <img src="images/fishchips/SpicyCornFish.jpeg" alt="Fisherman's Platter">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h5 fw-bold mb-2">Spicy Corn Fish</h3>
+                            <p class="text-muted small">Succulent fish bites marinated in fiery spices and coated with a crunchy cornflake crust. Fried to a beautiful golden crisp, these tender, zesty delights deliver the ultimate punch of bold flavor and explosive texture in every single bite.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRANCHISE LOCATIONS SECTION -->
+    <section id="locations" class="py-5">
+        <div class="container py-4">
+            <h2 class="text-center section-title display-5">Our Outlets</h2>
+            <p class="text-center text-muted mb-5">Drop by your nearest DayCatch counter for premium crispy warmth served hot.</p>
+            
+            <div class="row g-4">
+                <!-- Location 1 -->
+                <div class="col-md-6">
+                    <div class="location-card p-4">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <h3 class="h5 fw-bold text-dark mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i>fish & chips Bahana</h3>
+                                <p class="text-muted small mb-3">HYJACK DRIVE - IN Sainikapuri Hyderabad Telangana 500094</p>
+                                <span class="badge bg-success p-2 mb-2"><i class="bi bi-clock me-1"></i> Open Now: 11 AM - 11 PM</span>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="map-container d-flex align-items-center justify-content-center border">
+                                    <!-- Tip: You can paste your iframe code from Google Maps below -->
+                                    <div class="text-center p-3 text-muted">
+                                        <i class="bi bi-map-fill display-6 mb-2 text-secondary"></i>
+                                        <div class="small fw-semibold">Google Map Hub</div>
+                                        <span class="x-small text-secondary">
+                                            <img src="images/location/HyJackDriveIn.png" alt="Fisherman's Platter">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="col-md-6">
+                    <div class="location-card p-4">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <h3 class="h5 fw-bold text-dark mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i>Fish & Chips - Repalle</h3>
+                                <p class="text-muted small mb-3">Battiprolu Highway Road, Penumudi, Repalle, Andhra Pradesh, 522265.</p>
+                                <span class="badge bg-success p-2 mb-2"><i class="bi bi-clock me-1"></i> Open Now: 12 PM - Midnight</span>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="map-container d-flex align-items-center justify-content-center border">
+                                    <div class="text-center p-3 text-muted">
+                                        <i class="bi bi-map-fill display-6 mb-2 text-secondary"></i>
+                                        <div class="small fw-semibold">Google Map Hub</div>
+                                        <span class="x-small text-secondary">
+                                            <img src="images/location/Repalle.png" alt="Fisherman's Platter">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREMIUM HIGH-VISIBILITY FRANCHISE INVESTMENT SECTION -->
+    <section id="partner" class="py-5 bg-light border-top border-bottom">
+        <div class="container py-4">
+            <div class="p-5 franchise-banner shadow-sm bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <span class="badge bg-primary text-uppercase px-3 py-2 mb-3">Now Expanding Nationwide</span>
+                        <h2 class="display-5 fw-bold text-navy mb-3">Partner with DayCatch Fish & Chips</h2>
+                        <p class="lead text-muted mb-4">Tap into India’s fastest-growing premium seafood QSR model. With a lean kitchen layout, robust margins, a streamlined supply chain, and premium digital operational support, owning a **fishandchips.in** franchise yields reliable returns.</p>
+                        <div class="row g-3 mb-4">
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-2"></i> <span>Low Overhead, High Yield Setup</span></div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-2"></i> <span>End-to-End Raw Ingredient Supply</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4 border rounded-3 bg-light">
+                            <h4 class="fw-bold mb-3">Investor Desk</h4>
+                            <p class="small text-muted mb-3">Request our detailed confidential financial kit & layout options prospectus.</p>
+                            <a href="mailto:daycatch@gmail.com" class="btn btn-primary w-100 py-2 mb-2"><i class="bi bi-envelope-fill me-2"></i>Email Investor Relations</a>
+                            <div class="small fw-bold text-dark mt-2"><i class="bi bi-telephone-fill me-1 text-primary"></i> +91 83670 00929</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer id="contact" class="pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4 border-bottom pb-4 mb-4">
+                <div class="col-md-4">
+                    <h3 class="h4 fw-bold mb-3 text-white">DayCatch Fish & Chips</h3>
+                    <p class="small opacity-75">Serving crispy smiles daily. We source our seafood sustainably and process under strict hygiene standards to guarantee ocean freshness at your table.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="h6 text-uppercase fw-bold tracking-wider text-warning mb-3">Quick Navigation</h4>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#menu">Our Menu Highlights</a></li>
+                        <li class="mb-2"><a href="#locations">Find an Outlet</a></li>
+                        <li class="mb-2"><a href="#partner">Franchise Evaluation Portal</a></li>
                     </ul>
-                    <li><strong>Telangana</strong>
-                        <ul>
-                            <li>Hyderabad - Sainikpuri</li>
-                            <li>Hyderabad - Pragathi Nagar</li>
-                        </ul>
-                    </li>
-                </ul>
-        </section>
-
-        <!-- Menu Section -->
-        <section id="menu" class="tab-content">
-            <h3>Our Menu</h3>
-                <ul class="check-list">
-                    <!-- State 1 -->
-                    <li><strong>Fish Fillet</strong>
-                        <ul>
-                            <li>Garlic</li>
-                            <li>Masala</li>
-                        </ul>
-                    </li> <!-- Make sure to close the state item AFTER the nested list -->
-
-                    <!-- State 2 -->
-                    <li><strong>Fish Fingers</strong>
-                        <ul>
-                            <li>Garlic</li>
-                            <li>Masala</li>
-                        </ul>
-                    <li><strong>Prawn Butterfly</strong>
-                        <ul>
-                            <li>Garlic</li>
-                            <li>Masala</li>
-                        </ul>
-                    </li>
-                    <li><strong>Prawn Torpedo</strong>
-                        <ul>
-                            <li>Garlic</li>
-                            <li>Masala</li>
-                        </ul>
-                    </li>
-                </ul>        
-            </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="tab-content">
-            <h2>Get In Touch</h2>
-            <p>Have questions? Fill out our contact form or shoot us an email directly at daycatch@gmail.com.</p>
-        </section>
-    </main>
-
-    <!-- Footer Copyright Block -->
-    <footer class="site-footer">
-        <p>Copyright © DayCatch Fish & Chips VN Aqua RAS Pvt Ltd. 2026 All rights reserved</p>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="h6 text-uppercase fw-bold tracking-wider text-warning mb-3">Connect Instantly</h4>
+                    <p class="small mb-2"><i class="bi bi-geo-alt me-2 text-gold"></i>Corporate Headquarters, Hyderabad, India</p>
+                    <p class="small mb-2"><i class="bi bi-envelope me-2 text-gold"></i>daycatch@gmail.com</p>
+                    <p class="small"><i class="bi bi-globe me-2 text-gold"></i>www.fishandchips.in</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0 opacity-75">&copy; 2026 DayCatch Fish & Chips. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <a href="#" class="text-white me-3 opacity-75"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-3 opacity-75"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white opacity-75"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <!-- --- THE CRITICAL JAVASCRIPT SWITCH --- -->
-    <script>
-        const links = document.querySelectorAll('.tab-link');
-        const contents = document.querySelectorAll('.tab-content');
-
-        links.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevents standard link jumps
-
-                // Step A: Reset active styling on menu tabs
-                links.forEach(item => item.classList.remove('active'));
-                this.classList.add('active');
-
-                // Step B: Hide all text body panels 
-                contents.forEach(box => box.classList.remove('active'));
-
-                // Step C: target and show the single clicked content matching ID
-                const targetId = this.getAttribute('data-target');
-                document.getElementById(targetId).classList.add('active');
-            });
-        });
-    </script>
-
+    <!-- Bootstrap 5.3 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
