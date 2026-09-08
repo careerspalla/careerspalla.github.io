@@ -102,11 +102,17 @@
             background: #fff;
             box-shadow: 0 5px 15px rgba(0,0,0,0.02);
         }
-        .map-container {
+        .map-container-old {
             height: 200px;
             background-color: #e5e3df;
             border-radius: 8px;
             overflow: hidden;
+        }
+        /* Force iframe to fit inside .map-container */
+        .map-container iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: 0;
         }
         .franchise-banner {
             background-color: var(--soft-white);
@@ -482,7 +488,9 @@
                                         <i class="bi bi-map-fill display-6 mb-2 text-secondary"></i>
                                         <div class="small fw-semibold">Google Map Hub</div>
                                         <span class="x-small text-secondary">
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.763519516252!2d77.37990885972974!3d15.161631099157022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb6efe478cb616f%3A0x8a2a2aefd086ba45!2sDay%20catch!5e1!3m2!1sen!2sin!4v1788852298741!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                                            <div class="map-container border">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.763519516252!2d77.37990885972974!3d15.161631099157022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb6efe478cb616f%3A0x8a2a2aefd086ba45!2sDay%20catch!5e1!3m2!1sen!2sin!4v1788852298741!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                                            </div>                           
                                         </span>
                                     </div>
                                 </div>
@@ -507,7 +515,9 @@
                                         <i class="bi bi-map-fill display-6 mb-2 text-secondary"></i>
                                         <div class="small fw-semibold">Google Map Hub</div>
                                         <span class="x-small text-secondary">
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254.44159498758384!2d78.0381514627925!3d15.8067200476805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dd9fff209891%3A0x7ba57ea634e490f1!2sBirla%20compound!5e1!3m2!1sen!2sin!4v1788852979869!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                                            <div class="map-container border">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254.44159498758384!2d78.0381514627925!3d15.8067200476805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dd9fff209891%3A0x7ba57ea634e490f1!2sBirla%20compound!5e1!3m2!1sen!2sin!4v1788852979869!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                                            </div>
                                         </span>
                                     </div>
                                 </div>
