@@ -133,7 +133,16 @@
             font-size: 28px;
             color: red;
         }   
-        
+        .logo-text-footer {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            /*color: black;*/
+        }
+        .logored-text-footer {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            color: red;
+        }          
         /* 1. Load the downloaded font file */
         @font-face {
             font-family: 'BudmoJiggler';
@@ -164,7 +173,26 @@
             color: #ffa500; /* Warm orange tint */
             font-weight: 600;
         }
-
+        .neon-text-footer {
+            font-family: 'BudmoJiggler', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: capitalize;
+            
+            /* Recreating the orange neon glow from the image */
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #ffaa00,
+                0 0 20px #ffaa00,
+                0 0 40px #ff5500;
+        }
+        .neonglow-text-footer {
+            /*font-family: 'Kumar One Outline', serif;*/
+            font-family: 'Caveat', cursive;
+            font-size: 1rem;
+            color: #ffa500; /* Warm orange tint */
+            font-weight: 400;
+        }
 
     </style>
 </head>
@@ -266,7 +294,7 @@
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Prawn Torpedo</h3>
-                            <p class="text-muted small">Expertly marinated fish fillets coated in a golden, crispy breading. Flaky on the inside and packed with your choice of savory garlic or bold masala, it is the ultimate crunchy seafood snack.</p>
+                            <p class="text-muted small">Sticking to its classic, elongated shape—our Prawn Torpedo delivers a neat, uniform crunch packed with succulent prawn flavor and finished with a fresh squeeze of lime.</p>
                         </div>
                     </div>
                 </div>
@@ -278,8 +306,8 @@
                             <img src="images/fishchips/PrawnButterfly.jpeg" alt="Fish Fingers">
                         </div>
                         <div class="card-body p-4 text-center">
-                            <h3 class="h5 fw-bold mb-2">Prawn Torpedo</h3>
-                            <p class="text-muted small">Tender fish fillets cut into perfect bite-sized strips and coated in a golden, ultra-crispy crumb. Flaky on the inside with a satisfying crunch, they make for an irresistible, savory snack paired perfectly with your favorite dipping sauce.</p>
+                            <h3 class="h5 fw-bold mb-2">Prawn Butterfly</h3>
+                            <p class="text-muted small">Perfectly expanded and fried to golden perfection—our Prawn Butterfly features a wide, crispy crunch that holds maximum flavor, served with a sweet and spicy dipping sauce.</p>
                         </div>
                     </div>
                 </div>
@@ -292,7 +320,7 @@
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Fish Lolipop</h3>
-                            <p class="text-muted small">Succulent fish bites marinated in fiery spices and coated with a crunchy cornflake crust. Fried to a beautiful golden crisp, these tender, zesty delights deliver the ultimate punch of bold flavor and explosive texture in every single bite.</p>
+                            <p class="text-muted small">Fun to hold and impossible to resist—our Fish Lollipops are crispy on the outside, packed with a savory fish filling on the inside, and served perfectly on a stick!</p>
                         </div>
                     </div>
                 </div>
@@ -307,7 +335,7 @@
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Tawa Fish Fry</h3>
-                            <p class="text-muted small">Expertly marinated fish fillets coated in a golden, crispy breading. Flaky on the inside and packed with your choice of savory garlic or bold masala, it is the ultimate crunchy seafood snack.</p>
+                            <p class="text-muted small">Flavor-packed and cooked on the bone—our Tawa Fish Fry is deeply scored with signature spices for a rich, traditional taste that real fish lovers will adore.</p>
                         </div>
                     </div>
                 </div>
@@ -320,7 +348,7 @@
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Fish & Chips</h3>
-                            <p class="text-muted small">Tender fish fillets cut into perfect bite-sized strips and coated in a golden, ultra-crispy crumb. Flaky on the inside with a satisfying crunch, they make for an irresistible, savory snack paired perfectly with your favorite dipping sauce.</p>
+                            <p class="text-muted small">Keep it classic with our traditional Fish & Chips—a perfectly sized, golden-battered fish fillet served hot alongside seasoned rustic potato wedges and creamy tartar sauce.</p>
                         </div>
                     </div>
                 </div>
@@ -333,7 +361,7 @@
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Special Combo</h3>
-                            <p class="text-muted small">Succulent fish bites marinated in fiery spices and coated with a crunchy cornflake crust. Fried to a beautiful golden crisp, these tender, zesty delights deliver the ultimate punch of bold flavor and explosive texture in every single bite.</p>
+                            <p class="text-muted small">The ultimate seafood feast—our Special Combo is loaded with a generous variety of crispy fried fish, juicy prawns, and golden potato fries, served with traditional mushy peas and tartar sauce.</p>
                         </div>
                     </div>
                 </div>
@@ -348,7 +376,7 @@
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">French Fries</h3>
-                            <p class="text-muted small">Expertly marinated fish fillets coated in a golden, crispy breading. Flaky on the inside and packed with your choice of savory garlic or bold masala, it is the ultimate crunchy seafood snack.</p>
+                            <p class="text-muted small">Indulge in a plate of our classic golden fries, served hot and crisp with your favorite dip.</p>
                         </div>
                     </div>
                 </div>
@@ -361,7 +389,7 @@
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Spring Potato</h3>
-                            <p class="text-muted small">Tender fish fillets cut into perfect bite-sized strips and coated in a golden, ultra-crispy crumb. Flaky on the inside with a satisfying crunch, they make for an irresistible, savory snack paired perfectly with your favorite dipping sauce.</p>
+                            <p class="text-muted small">Indulge in the perfect crunch with our freshly spiraled, golden-brown Spring Potatoes.</p>
                         </div>
                     </div>
                 </div>
@@ -374,7 +402,7 @@
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Tawa Fish Fry</h3>
-                            <p class="text-muted small">Succulent fish bites marinated in fiery spices and coated with a crunchy cornflake crust. Fried to a beautiful golden crisp, these tender, zesty delights deliver the ultimate punch of bold flavor and explosive texture in every single bite.</p>
+                            <p class="text-muted small">Garnished with fresh herbs and seared to perfection—our Pomfret-style Tawa Fish Fry offers a delicate crunch and rich, bone-in flavor crafted for true seafood enthusiasts.</p>
                         </div>
                     </div>
                 </div>
@@ -448,7 +476,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8">
                         <span class="badge bg-primary text-uppercase px-3 py-2 mb-3">Now Expanding Nationwide</span>
-                        <h2 class="display-5 fw-bold text-navy mb-3">Partner with DayCatch Fish & Chips</h2>
+                        <h2 class="display-5 fw-bold text-navy mb-3">Partner with <span class="logo-text">Day</span><span class="logored-text">Catch </span><span class="neonglow-text">Fish & Chips</span></h2>
                         <p class="lead text-muted mb-4">Tap into India’s fastest-growing premium seafood QSR model. With a lean kitchen layout, robust margins, a streamlined supply chain, and premium digital operational support, owning a **fishandchips.in** franchise yields reliable returns.</p>
                         <div class="row g-3 mb-4">
                             <div class="col-sm-6">
@@ -477,7 +505,7 @@
         <div class="container">
             <div class="row g-4 border-bottom pb-4 mb-4">
                 <div class="col-md-4">
-                    <h3 class="h4 fw-bold mb-3 text-white">DayCatch Fish & Chips</h3>
+                    <span class="logo-text-footer">Day</span><span class="logored-text-footer">Catch </span><span class="neonglow-text-footer">Fish & Chips</span>
                     <p class="small opacity-75">Serving crispy smiles daily. We source our seafood sustainably and process under strict hygiene standards to guarantee ocean freshness at your table.</p>
                 </div>
                 <div class="col-md-4">
