@@ -207,117 +207,138 @@
             font-weight: 200;
         }
 
-        /* FRANCHISE PACKAGE SECTION */
         .franchise-options-section {
-            background: linear-gradient(180deg, #f8f0e5 0%, #ffffff 100%);
+            background:
+                radial-gradient(circle at 10% 0%, rgba(218,192,163,.22), transparent 28%),
+                radial-gradient(circle at 90% 10%, rgba(15,44,89,.06), transparent 30%),
+                linear-gradient(180deg, #fbf7f1 0%, #ffffff 72%);
         }
+        .franchise-intro { max-width: 920px; }
+        .package-grid { align-items: stretch; }
         .package-card {
+            position: relative;
             height: 100%;
-            background: #fff;
+            display: flex;
+            flex-direction: column;
+            background: rgba(255,255,255,.96);
             border: 1px solid rgba(15,44,89,.10);
-            border-radius: 18px;
+            border-radius: 22px;
             overflow: hidden;
-            box-shadow: 0 12px 35px rgba(15,44,89,.07);
-            transition: transform .25s ease, box-shadow .25s ease;
+            box-shadow: 0 14px 40px rgba(15,44,89,.075);
+            transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
         }
         .package-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 45px rgba(15,44,89,.12);
+            transform: translateY(-7px);
+            box-shadow: 0 22px 55px rgba(15,44,89,.13);
+            border-color: rgba(15,44,89,.18);
         }
         .package-header {
-            padding: 28px 26px 22px;
-            background: var(--primary-navy);
+            position: relative;
+            padding: 30px 28px 25px;
+            background: linear-gradient(135deg, #0F2C59, #173d73);
             color: #fff;
         }
-        .package-header.silver { background: linear-gradient(135deg,#4c5968,#7b8794); }
-        .package-header.gold { background: linear-gradient(135deg,#8a6420,#c49a45); }
-        .package-header.platinum { background: linear-gradient(135deg,#263746,#526779); }
+        .package-header::after {
+            content: '';
+            position: absolute;
+            width: 150px; height: 150px;
+            right: -55px; top: -70px;
+            border: 1px solid rgba(255,255,255,.14);
+            border-radius: 50%;
+        }
+        .package-header.silver { background: linear-gradient(135deg,#465361,#7a8795); }
+        .package-header.gold { background: linear-gradient(135deg,#7c5818,#c49a45); }
+        .package-header.platinum { background: linear-gradient(135deg,#243544,#526879); }
+        .package-level {
+            display:flex; align-items:center; justify-content:space-between; gap:12px;
+        }
+        .package-icon {
+            width:42px; height:42px; flex:0 0 42px;
+            display:grid; place-items:center;
+            border-radius:12px;
+            background:rgba(255,255,255,.14);
+            border:1px solid rgba(255,255,255,.18);
+            font-size:1.15rem;
+        }
         .package-price {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -.5px;
+            font-size: 2.05rem; font-weight: 700; letter-spacing: -.6px;
         }
         .package-tag {
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 999px;
-            background: rgba(255,255,255,.14);
-            font-size: .72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: .7px;
+            display: inline-block; padding: 6px 11px; border-radius: 999px;
+            background: rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.16);
+            font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .8px;
         }
-        .package-body { padding: 26px; }
+        .package-body { padding: 28px; flex:1; }
         .package-body h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--primary-navy);
-            margin-bottom: 12px;
+            font-family: 'Montserrat', sans-serif; font-size: .94rem; font-weight: 700;
+            color: var(--primary-navy); margin-bottom: 12px; letter-spacing: .1px;
         }
-        .package-list {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 0;
-        }
+        .package-list { list-style: none; padding-left: 0; margin-bottom: 0; }
         .package-list li {
-            position: relative;
-            padding: 7px 0 7px 26px;
-            color: #4b5d70;
-            font-size: .9rem;
-            line-height: 1.45;
+            position: relative; padding: 7px 0 7px 26px; color: #4b5d70;
+            font-size: .88rem; line-height: 1.5;
         }
         .package-list li::before {
-            content: '\F26A';
-            font-family: bootstrap-icons;
-            position: absolute;
-            left: 0;
-            top: 8px;
-            color: #198754;
-            font-weight: 700;
+            content: '\F26A'; font-family: bootstrap-icons; position:absolute; left:0; top:8px;
+            color:#198754; font-weight:700;
         }
         .territory-box {
-            background: #f8fafc;
-            border: 1px solid rgba(15,44,89,.08);
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 18px;
+            background: #f8fafc; border: 1px solid rgba(15,44,89,.08);
+            border-radius: 14px; padding: 16px; margin-top: 20px;
         }
         .state-pill {
-            display: inline-block;
-            background: #fff;
-            border: 1px solid rgba(15,44,89,.10);
-            border-radius: 999px;
-            padding: 5px 10px;
-            margin: 3px 2px;
-            font-size: .78rem;
-            color: #40556b;
+            display:inline-block; background:#fff; border:1px solid rgba(15,44,89,.10);
+            border-radius:999px; padding:6px 11px; margin:3px 2px; font-size:.76rem; color:#40556b;
+            box-shadow:0 2px 6px rgba(15,44,89,.025);
         }
         .franchise-note {
-            border-left: 4px solid var(--accent-gold);
-            background: #fff;
-            border-radius: 0 12px 12px 0;
-            padding: 16px 18px;
+            border-left:4px solid var(--accent-gold); background:#fff;
+            border-radius:0 13px 13px 0; padding:16px 18px;
+            box-shadow:0 5px 16px rgba(15,44,89,.04);
         }
-        .comparison-strip {
-            background: var(--primary-navy);
-            color: #fff;
-            border-radius: 16px;
+        /* Master-franchise supply/capacity highlight */
+        .master-capacity {
+            position:relative; margin:22px 0 24px; padding:19px 19px 18px;
+            border-radius:16px; overflow:hidden;
+            background:linear-gradient(135deg, #f3f7fb 0%, #fffaf2 100%);
+            border:1px solid rgba(15,44,89,.12);
+            box-shadow:0 8px 22px rgba(15,44,89,.055);
         }
-        .comparison-strip .metric {
-            padding: 20px 12px;
-            border-right: 1px solid rgba(255,255,255,.14);
+        .master-capacity::before {
+            content:''; position:absolute; left:0; top:0; bottom:0; width:5px;
+            background:linear-gradient(180deg, var(--primary-navy), var(--accent-gold));
         }
-        .comparison-strip .metric:last-child { border-right: 0; }
-        .comparison-strip .metric strong {
-            display: block;
-            font-size: 1.25rem;
-            color: var(--accent-gold);
+        .master-capacity .capacity-badge {
+            display:inline-flex; align-items:center; gap:7px;
+            padding:5px 10px; border-radius:999px;
+            background:rgba(15,44,89,.08); color:var(--primary-navy);
+            font-size:.67rem; font-weight:800; letter-spacing:.7px; text-transform:uppercase;
         }
-        @media (max-width: 767px) {
-            .comparison-strip .metric { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
-            .comparison-strip .metric:last-child { border-bottom: 0; }
-            .package-price { font-size: 1.65rem; }
+        .master-capacity h5 {
+            margin:10px 0 6px; color:var(--primary-navy); font-size:1rem; font-weight:800;
+        }
+        .master-capacity p { margin:0; color:#526477; font-size:.83rem; line-height:1.55; }
+        .capacity-flow {
+            display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:13px;
+            font-size:.74rem; font-weight:700; color:#34495e;
+        }
+        .capacity-flow span {
+            padding:6px 9px; background:#fff; border:1px solid rgba(15,44,89,.08);
+            border-radius:8px;
+        }
+        .capacity-flow i { color:var(--accent-gold); }
+        .basic-kitchen-box {
+            padding-top:18px; margin-top:18px; border-top:1px dashed rgba(15,44,89,.16);
+        }
+        .comparison-strip { background:var(--primary-navy); color:#fff; border-radius:18px; box-shadow:0 12px 30px rgba(15,44,89,.12); }
+        .comparison-strip .metric { padding:20px 12px; border-right:1px solid rgba(255,255,255,.14); }
+        .comparison-strip .metric:last-child { border-right:0; }
+        .comparison-strip .metric strong { display:block; font-size:1.25rem; color:var(--accent-gold); }
+        @media (max-width:767px) {
+            .comparison-strip .metric { border-right:0; border-bottom:1px solid rgba(255,255,255,.14); }
+            .comparison-strip .metric:last-child { border-bottom:0; }
+            .package-price { font-size:1.7rem; }
+            .package-body { padding:22px; }
         }
 
     </style>
@@ -595,7 +616,7 @@
                         <div class="row align-items-center">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <h3 class="h5 fw-bold text-dark mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i><span class="neonglow-text-outlet">Fish & Chips</span> - Gunthakal</h3>
-                                <p class="text-muted small mb-3">60 Feet Road, Royal Circle, Guntakal, Anamtharam District, Aandra Pradesh 515801</p>
+                                <p class="text-muted small mb-3">60 Feet Road, Royal Circle, Guntakal, Ananthapuram District, Aandra Pradesh 515801</p>
                                 <span class="badge bg-success p-2 mb-2"><i class="bi bi-clock me-1"></i> Open Now: 11 AM - 11 PM</span>
                             </div>
                             <div class="col-sm-6">
@@ -646,16 +667,16 @@
     <!-- FRANCHISE PACKAGE OPTIONS SECTION -->
     <section id="franchise-options" class="py-5 franchise-options-section border-top">
         <div class="container py-4">
-            <div class="text-center mb-5">
+            <div class="text-center mb-5 franchise-intro mx-auto">
                 <span class="badge bg-primary text-uppercase px-3 py-2 mb-3">Franchise Opportunities</span>
                 <h2 class="section-title display-5 mb-4">Choose Your DayCatch Partnership Model</h2>
                 <p class="text-muted mx-auto" style="max-width: 850px;">
-                    From a ready-to-start outlet to district and state-level territory ownership,
+                    From a ready-to-start outlet to district and state-owned territory ownership,
                     DayCatch offers multiple ways to participate in the expansion of our Fish & Chips QSR brand.
                 </p>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-4 package-grid">
                 <!-- BASIC -->
                 <div class="col-lg-6">
                     <div class="package-card">
@@ -684,7 +705,9 @@
                                 <li>Obtain and maintain applicable local licences/registrations, including food and GST requirements as applicable.</li>
                             </ul>
 
-                            <h4>DayCatch kitchen setup includes</h4>
+                            <div class="basic-kitchen-box">
+                                <h4><i class="bi bi-tools me-2 text-primary"></i>DayCatch kitchen setup includes</h4>
+                            </div>
                             <ul class="package-list">
                                 <li>2 Twin oil fryers</li>
                                 <li>1 Tawa fry</li>
@@ -713,7 +736,7 @@
                             <span class="package-tag">District Territory Rights</span>
                             <h3 class="h3 fw-bold mt-3 mb-2">Silver Master Package</h3>
                             <div class="package-price">₹5,00,000</div>
-                            <div class="small opacity-75 mt-1">District-level territory ownership</div>
+                            <div class="small opacity-75 mt-1">District-owned territory ownership</div>
                         </div>
                         <div class="package-body">
                             <div class="row g-3 mb-3">
@@ -735,10 +758,27 @@
                                 <li>Must meet the minimum franchisee-start requirement applicable to the territory within one year.</li>
                                 <li>New outlets must maintain the prescribed territory spacing: minimum 3 km in metro/mega cities and up to 5 km in smaller Tier 2/Tier 3 cities.</li>
                             </ul>
+                            <div class="master-capacity" role="note" aria-label="Master franchise supply and storage advantage">
+                                <span class="capacity-badge"><i class="bi bi-box-seam-fill"></i> Master Franchise Advantage</span>
+                                <h5>Higher-capacity kitchen setup for territory operations</h5>
+                                <p><strong>Includes the same core kitchen setup as the Basic Package</strong>, with an <strong>upgraded-capacity deep refrigerator</strong>. Master franchisees receive higher quantities of raw material from DayCatch to support their territory network and may distribute supplies to their child franchises.</p>
+                                <div class="capacity-flow" aria-label="Supply flow">
+                                    <span>DayCatch Supply</span><i class="bi bi-arrow-right"></i>
+                                    <span>Master Franchisee</span><i class="bi bi-arrow-right"></i>
+                                    <span>Child Franchises</span>
+                                </div>
+                            </div>
+                            <h4><i class="bi bi-snow2 me-2 text-primary"></i>Kitchen &amp; supply capacity</h4>
+                            <ul class="package-list">
+                                <li>Core kitchen equipment and operating setup remain aligned with the Basic Package.</li>
+                                <li>Deep refrigerator is upgraded to a higher-capacity unit to support increased raw-material volumes.</li>
+                                <li>Higher storage capacity is intended to support territory-level receipt, holding and distribution of raw materials to child franchises.</li>
+                            </ul>
+
 
                             <div class="territory-box">
                                 <div class="fw-bold text-dark mb-1"><i class="bi bi-diagram-3-fill me-2 text-primary"></i>Territory model</div>
-                                <div class="small text-muted">Master franchisee → district-level franchise expansion → new outlet network</div>
+                                <div class="small text-muted">Master franchisee → district-owned franchise expansion → new outlet network</div>
                             </div>
                         </div>
                     </div>
@@ -751,12 +791,12 @@
                             <span class="package-tag">State Territory Rights</span>
                             <h3 class="h3 fw-bold mt-3 mb-2">Gold Package</h3>
                             <div class="package-price">₹10,00,000</div>
-                            <div class="small opacity-75 mt-1">State-level territory rights for specified smaller states</div>
+                            <div class="small opacity-75 mt-1">State-owned territory rights for specified smaller states</div>
                         </div>
                         <div class="package-body">
                             <h4>Gold Master Franchisee rights</h4>
                             <ul class="package-list">
-                                <li>Acts as the master franchisee at state level.</li>
+                                <li>Acts as the master franchisee at state ownership.</li>
                                 <li>Can establish franchise outlets within the allotted state territory.</li>
                                 <li>Can grant Silver Package sub-franchises within the territory.</li>
                                 <li>For a Silver sub-franchise, the Gold master may share only its own franchise portion of brand fee and royalty; the organisation's portion remains untouched.</li>
@@ -773,7 +813,22 @@
                                     The organisation's applicable portion remains protected as specified in the master-franchise structure.
                                 </p>
                             </div>
-
+                            <div class="master-capacity" role="note" aria-label="Master franchise supply and storage advantage">
+                                <span class="capacity-badge"><i class="bi bi-box-seam-fill"></i> Master Franchise Advantage</span>
+                                <h5>Higher-capacity kitchen setup for territory operations</h5>
+                                <p><strong>Includes the same core kitchen setup as the Basic Package</strong>, with an <strong>upgraded-capacity deep refrigerator</strong>. Master franchisees receive higher quantities of raw material from DayCatch to support their territory network and may distribute supplies to their child franchises.</p>
+                                <div class="capacity-flow" aria-label="Supply flow">
+                                    <span>DayCatch Supply</span><i class="bi bi-arrow-right"></i>
+                                    <span>Master Franchisee</span><i class="bi bi-arrow-right"></i>
+                                    <span>Child Franchises</span>
+                                </div>
+                            </div>
+                            <h4><i class="bi bi-snow2 me-2 text-primary"></i>Kitchen &amp; supply capacity</h4>
+                            <ul class="package-list">
+                                <li>Core kitchen equipment and operating setup remain aligned with the Basic Package.</li>
+                                <li>Deep refrigerator is upgraded to a higher-capacity unit to support increased raw-material volumes.</li>
+                                <li>Higher storage capacity is intended to support territory-level receipt, holding and distribution of raw materials to child franchises.</li>
+                            </ul>
                             <h4 class="mt-4">Eligible states</h4>
                             <div>
                                 <span class="state-pill">Bihar</span>
@@ -803,18 +858,33 @@
                             <span class="package-tag">Premium State Territory Rights</span>
                             <h3 class="h3 fw-bold mt-3 mb-2">Platinum Package</h3>
                             <div class="package-price">₹20,00,000</div>
-                            <div class="small opacity-75 mt-1">State-level territory rights for larger/high-potential markets</div>
+                            <div class="small opacity-75 mt-1">State-owned territory rights for larger/high-potential markets</div>
                         </div>
                         <div class="package-body">
                             <h4>What makes Platinum different?</h4>
                             <ul class="package-list">
                                 <li>Same fundamental master-franchise structure as the Gold Package.</li>
                                 <li>Designed for larger states and states containing major/world-class cities with stronger market potential.</li>
-                                <li>Provides a broader and potentially more valuable state-level expansion opportunity.</li>
+                                <li>Provides a broader and potentially more valuable state-owned expansion opportunity.</li>
                                 <li>Additional initial investment reflects the higher potential of the allotted state.</li>
                                 <li>Master-franchise rights and sub-franchise mechanics otherwise remain similar to the Gold model.</li>
                             </ul>
-
+                            <div class="master-capacity" role="note" aria-label="Master franchise supply and storage advantage">
+                                <span class="capacity-badge"><i class="bi bi-box-seam-fill"></i> Master Franchise Advantage</span>
+                                <h5>Higher-capacity kitchen setup for territory operations</h5>
+                                <p><strong>Includes the same core kitchen setup as the Basic Package</strong>, with an <strong>upgraded-capacity deep refrigerator</strong>. Master franchisees receive higher quantities of raw material from DayCatch to support their territory network and may distribute supplies to their child franchises.</p>
+                                <div class="capacity-flow" aria-label="Supply flow">
+                                    <span>DayCatch Supply</span><i class="bi bi-arrow-right"></i>
+                                    <span>Master Franchisee</span><i class="bi bi-arrow-right"></i>
+                                    <span>Child Franchises</span>
+                                </div>
+                            </div>
+                            <h4><i class="bi bi-snow2 me-2 text-primary"></i>Kitchen &amp; supply capacity</h4>
+                            <ul class="package-list">
+                                <li>Core kitchen equipment and operating setup remain aligned with the Basic Package.</li>
+                                <li>Deep refrigerator is upgraded to a higher-capacity unit to support increased raw-material volumes.</li>
+                                <li>Higher storage capacity is intended to support territory-level receipt, holding and distribution of raw materials to child franchises.</li>
+                            </ul>
                             <h4 class="mt-4">Eligible states</h4>
                             <div>
                                 <span class="state-pill">Maharashtra</span>
@@ -850,15 +920,15 @@
                     </div>
                     <div class="col-md-3 metric">
                         <strong>₹5 Lakh</strong>
-                        <span class="small">District-level Silver</span>
+                        <span class="small">District-owned Silver</span>
                     </div>
                     <div class="col-md-3 metric">
                         <strong>₹10 Lakh</strong>
-                        <span class="small">State-level Gold</span>
+                        <span class="small">State-owned Gold</span>
                     </div>
                     <div class="col-md-3 metric">
                         <strong>₹20 Lakh</strong>
-                        <span class="small">State-level Platinum</span>
+                        <span class="small">State-owned Platinum</span>
                     </div>
                 </div>
             </div>
