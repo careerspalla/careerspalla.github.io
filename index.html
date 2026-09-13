@@ -206,6 +206,120 @@
             color: #ffa500; /* Warm orange tint */
             font-weight: 200;
         }
+
+        /* FRANCHISE PACKAGE SECTION */
+        .franchise-options-section {
+            background: linear-gradient(180deg, #f8f0e5 0%, #ffffff 100%);
+        }
+        .package-card {
+            height: 100%;
+            background: #fff;
+            border: 1px solid rgba(15,44,89,.10);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(15,44,89,.07);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .package-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 45px rgba(15,44,89,.12);
+        }
+        .package-header {
+            padding: 28px 26px 22px;
+            background: var(--primary-navy);
+            color: #fff;
+        }
+        .package-header.silver { background: linear-gradient(135deg,#4c5968,#7b8794); }
+        .package-header.gold { background: linear-gradient(135deg,#8a6420,#c49a45); }
+        .package-header.platinum { background: linear-gradient(135deg,#263746,#526779); }
+        .package-price {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -.5px;
+        }
+        .package-tag {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.14);
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .7px;
+        }
+        .package-body { padding: 26px; }
+        .package-body h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+        }
+        .package-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .package-list li {
+            position: relative;
+            padding: 7px 0 7px 26px;
+            color: #4b5d70;
+            font-size: .9rem;
+            line-height: 1.45;
+        }
+        .package-list li::before {
+            content: '\F26A';
+            font-family: bootstrap-icons;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            color: #198754;
+            font-weight: 700;
+        }
+        .territory-box {
+            background: #f8fafc;
+            border: 1px solid rgba(15,44,89,.08);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 18px;
+        }
+        .state-pill {
+            display: inline-block;
+            background: #fff;
+            border: 1px solid rgba(15,44,89,.10);
+            border-radius: 999px;
+            padding: 5px 10px;
+            margin: 3px 2px;
+            font-size: .78rem;
+            color: #40556b;
+        }
+        .franchise-note {
+            border-left: 4px solid var(--accent-gold);
+            background: #fff;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 18px;
+        }
+        .comparison-strip {
+            background: var(--primary-navy);
+            color: #fff;
+            border-radius: 16px;
+        }
+        .comparison-strip .metric {
+            padding: 20px 12px;
+            border-right: 1px solid rgba(255,255,255,.14);
+        }
+        .comparison-strip .metric:last-child { border-right: 0; }
+        .comparison-strip .metric strong {
+            display: block;
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+        }
+        @media (max-width: 767px) {
+            .comparison-strip .metric { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+            .comparison-strip .metric:last-child { border-bottom: 0; }
+            .package-price { font-size: 1.65rem; }
+        }
+
     </style>
 </head>
 <body>
@@ -226,6 +340,7 @@
                     <li class="nav-item"><a class="nav-link px-3 fw-semibold text-dark" href="#menu">Our Menu</a></li>
                     <li class="nav-item"><a class="nav-link px-3 fw-semibold text-dark" href="#locations">Locations</a></li>
                     <li class="nav-item"><a class="nav-link px-3 fw-semibold text-dark" href="#partner">Franchise Business</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 fw-semibold text-dark" href="#franchise-options">Packages</a></li>
                     <li class="nav-item ms-lg-3"><a class="btn btn-gold px-4 py-2" href="#contact">Contact Us</a></li>
                 </ul>
             </div>
@@ -527,6 +642,236 @@
         </div>
     </section>
 
+
+    <!-- FRANCHISE PACKAGE OPTIONS SECTION -->
+    <section id="franchise-options" class="py-5 franchise-options-section border-top">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary text-uppercase px-3 py-2 mb-3">Franchise Opportunities</span>
+                <h2 class="section-title display-5 mb-4">Choose Your DayCatch Partnership Model</h2>
+                <p class="text-muted mx-auto" style="max-width: 850px;">
+                    From a ready-to-start outlet to district and state-level territory ownership,
+                    DayCatch offers multiple ways to participate in the expansion of our Fish & Chips QSR brand.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- BASIC -->
+                <div class="col-lg-6">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <span class="package-tag">Outlet Franchise</span>
+                            <h3 class="h3 fw-bold mt-3 mb-2">Basic / Regular Package</h3>
+                            <div class="package-price">₹4,00,000</div>
+                            <div class="small opacity-75 mt-1">Initial franchise investment</div>
+                        </div>
+                        <div class="package-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-6">
+                                    <h4>Royalty</h4>
+                                    <p class="mb-0 fw-bold text-dark">4% of applicable sales</p>
+                                </div>
+                                <div class="col-6">
+                                    <h4>Shop Size</h4>
+                                    <p class="mb-0 fw-bold text-dark">Min. 10 × 10 ft<br>Recommended 10 × 15 ft</p>
+                                </div>
+                            </div>
+
+                            <h4>Franchisee responsibilities</h4>
+                            <ul class="package-list mb-4">
+                                <li>Provide a suitable shop meeting the minimum/recommended size.</li>
+                                <li>Provide required power and water facilities.</li>
+                                <li>Obtain and maintain applicable local licences/registrations, including food and GST requirements as applicable.</li>
+                            </ul>
+
+                            <h4>DayCatch kitchen setup includes</h4>
+                            <ul class="package-list">
+                                <li>2 Twin oil fryers</li>
+                                <li>1 Tawa fry</li>
+                                <li>2 table-and-chair sets — 2 tables and 8 chairs in total</li>
+                                <li>Deep refrigerator</li>
+                                <li>Counter setup</li>
+                                <li>Billing software and hardware</li>
+                                <li>Gas stove and pan — optional for power-cut areas</li>
+                                <li>Employee training</li>
+                                <li>25 kg raw material</li>
+                                <li>2 official visits</li>
+                                <li>Container — optional for customers with a suitable site/open place but no conventional shop</li>
+                            </ul>
+
+                            <div class="franchise-note mt-4 small">
+                                <strong>Ready-to-start model:</strong> DayCatch sets up the complete kitchen and hands over the outlet ready to commence operations, subject to the site being prepared with the required facilities and approvals.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SILVER -->
+                <div class="col-lg-6">
+                    <div class="package-card">
+                        <div class="package-header silver">
+                            <span class="package-tag">District Territory Rights</span>
+                            <h3 class="h3 fw-bold mt-3 mb-2">Silver Master Package</h3>
+                            <div class="package-price">₹5,00,000</div>
+                            <div class="small opacity-75 mt-1">District-level territory ownership</div>
+                        </div>
+                        <div class="package-body">
+                            <div class="row g-3 mb-3">
+                                <div class="col-6">
+                                    <h4>Brand Fee Share</h4>
+                                    <p class="mb-0 fw-bold text-dark">50%</p>
+                                </div>
+                                <div class="col-6">
+                                    <h4>Royalty Share</h4>
+                                    <p class="mb-0 fw-bold text-dark">50%</p>
+                                </div>
+                            </div>
+
+                            <h4>Role of the Silver Master Franchisee</h4>
+                            <ul class="package-list">
+                                <li>Acts as the master franchisee for the allotted district.</li>
+                                <li>Can establish any number of franchise outlets within the territory, subject to the applicable agreement.</li>
+                                <li>Can grant new franchise opportunities within the district.</li>
+                                <li>Must meet the minimum franchisee-start requirement applicable to the territory within one year.</li>
+                                <li>New outlets must maintain the prescribed territory spacing: minimum 3 km in metro/mega cities and up to 5 km in smaller Tier 2/Tier 3 cities.</li>
+                            </ul>
+
+                            <div class="territory-box">
+                                <div class="fw-bold text-dark mb-1"><i class="bi bi-diagram-3-fill me-2 text-primary"></i>Territory model</div>
+                                <div class="small text-muted">Master franchisee → district-level franchise expansion → new outlet network</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GOLD -->
+                <div class="col-lg-6">
+                    <div class="package-card">
+                        <div class="package-header gold">
+                            <span class="package-tag">State Territory Rights</span>
+                            <h3 class="h3 fw-bold mt-3 mb-2">Gold Package</h3>
+                            <div class="package-price">₹10,00,000</div>
+                            <div class="small opacity-75 mt-1">State-level territory rights for specified smaller states</div>
+                        </div>
+                        <div class="package-body">
+                            <h4>Gold Master Franchisee rights</h4>
+                            <ul class="package-list">
+                                <li>Acts as the master franchisee at state level.</li>
+                                <li>Can establish franchise outlets within the allotted state territory.</li>
+                                <li>Can grant Silver Package sub-franchises within the territory.</li>
+                                <li>For a Silver sub-franchise, the Gold master may share only its own franchise portion of brand fee and royalty; the organisation's portion remains untouched.</li>
+                            </ul>
+
+                            <div class="territory-box">
+                                <div class="fw-bold text-dark mb-2">Illustrative fee-sharing structure</div>
+                                <p class="small text-muted mb-2">
+                                    Where a new franchise generates a ₹50,000 brand-fee amount under the applicable structure,
+                                    the master-franchise portion may be divided between the Gold master and its Silver sub-franchise,
+                                    for example ₹25,000 + ₹25,000. Similarly, the Gold master's 2% royalty portion may be divided as 1% + 1%.
+                                </p>
+                                <p class="small fw-semibold text-dark mb-0">
+                                    The organisation's applicable portion remains protected as specified in the master-franchise structure.
+                                </p>
+                            </div>
+
+                            <h4 class="mt-4">Eligible states</h4>
+                            <div>
+                                <span class="state-pill">Bihar</span>
+                                <span class="state-pill">Jharkhand</span>
+                                <span class="state-pill">Chhattisgarh</span>
+                                <span class="state-pill">Assam</span>
+                                <span class="state-pill">Uttarakhand</span>
+                                <span class="state-pill">Himachal Pradesh</span>
+                                <span class="state-pill">Jammu &amp; Kashmir</span>
+                                <span class="state-pill">Goa</span>
+                                <span class="state-pill">Tripura</span>
+                                <span class="state-pill">Meghalaya</span>
+                                <span class="state-pill">Manipur</span>
+                                <span class="state-pill">Nagaland</span>
+                                <span class="state-pill">Mizoram</span>
+                                <span class="state-pill">Arunachal Pradesh</span>
+                                <span class="state-pill">Sikkim</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLATINUM -->
+                <div class="col-lg-6">
+                    <div class="package-card">
+                        <div class="package-header platinum">
+                            <span class="package-tag">Premium State Territory Rights</span>
+                            <h3 class="h3 fw-bold mt-3 mb-2">Platinum Package</h3>
+                            <div class="package-price">₹20,00,000</div>
+                            <div class="small opacity-75 mt-1">State-level territory rights for larger/high-potential markets</div>
+                        </div>
+                        <div class="package-body">
+                            <h4>What makes Platinum different?</h4>
+                            <ul class="package-list">
+                                <li>Same fundamental master-franchise structure as the Gold Package.</li>
+                                <li>Designed for larger states and states containing major/world-class cities with stronger market potential.</li>
+                                <li>Provides a broader and potentially more valuable state-level expansion opportunity.</li>
+                                <li>Additional initial investment reflects the higher potential of the allotted state.</li>
+                                <li>Master-franchise rights and sub-franchise mechanics otherwise remain similar to the Gold model.</li>
+                            </ul>
+
+                            <h4 class="mt-4">Eligible states</h4>
+                            <div>
+                                <span class="state-pill">Maharashtra</span>
+                                <span class="state-pill">Tamil Nadu</span>
+                                <span class="state-pill">Karnataka</span>
+                                <span class="state-pill">Gujarat</span>
+                                <span class="state-pill">Telangana</span>
+                                <span class="state-pill">Andhra Pradesh</span>
+                                <span class="state-pill">Uttar Pradesh</span>
+                                <span class="state-pill">West Bengal</span>
+                                <span class="state-pill">Rajasthan</span>
+                                <span class="state-pill">Madhya Pradesh</span>
+                                <span class="state-pill">Kerala</span>
+                                <span class="state-pill">Haryana</span>
+                                <span class="state-pill">Odisha</span>
+                                <span class="state-pill">Punjab</span>
+                            </div>
+
+                            <div class="franchise-note mt-4 small">
+                                <strong>Premium territory opportunity:</strong> Platinum is intended for state markets where the scale, city potential and expansion opportunity justify the higher initial territory-rights investment.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AT-A-GLANCE -->
+            <div class="comparison-strip mt-5">
+                <div class="row g-0 text-center">
+                    <div class="col-md-3 metric">
+                        <strong>₹4 Lakh</strong>
+                        <span class="small">Basic outlet franchise</span>
+                    </div>
+                    <div class="col-md-3 metric">
+                        <strong>₹5 Lakh</strong>
+                        <span class="small">District-level Silver</span>
+                    </div>
+                    <div class="col-md-3 metric">
+                        <strong>₹10 Lakh</strong>
+                        <span class="small">State-level Gold</span>
+                    </div>
+                    <div class="col-md-3 metric">
+                        <strong>₹20 Lakh</strong>
+                        <span class="small">State-level Platinum</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <p class="small text-muted mb-0">
+                    <i class="bi bi-info-circle me-1"></i>
+                    Territory availability, franchise counts, spacing, fee-sharing and other commercial terms are subject to the final franchise/master-franchise agreement.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- PREMIUM HIGH-VISIBILITY FRANCHISE INVESTMENT SECTION -->
     <section id="partner" class="py-5 bg-light border-top border-bottom">
         <div class="container py-4">
@@ -535,7 +880,7 @@
                     <div class="col-lg-8">
                         <span class="badge bg-primary text-uppercase px-3 py-2 mb-3">Now Expanding Nationwide</span>
                         <h2 class="display-5 fw-bold text-navy mb-3">Partner with <span class="logo-text">Day</span><span class="logored-text">Catch </span><span class="neonglow-text">Fish & Chips</span></h2>
-                        <p class="lead text-muted mb-4">Tap into India’s fastest-growing premium seafood QSR model. With a lean kitchen layout, robust margins, a streamlined supply chain, and premium digital operational support, owning a **fishandchips.in** franchise yields reliable returns.</p>
+                        <p class="lead text-muted mb-4">Tap into India’s fastest-growing premium seafood QSR model. With a lean kitchen layout, streamlined operations, supply-chain support, and digital operational assistance, a fishandchips.in franchise is designed to provide an efficient platform for outlet expansion.</p>
                         <div class="row g-3 mb-4">
                             <div class="col-sm-6">
                                 <div class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-success me-2"></i> <span>Low Overhead, High Yield Setup</span></div>
@@ -572,6 +917,7 @@
                         <li class="mb-2"><a href="#menu">Our Menu Highlights</a></li>
                         <li class="mb-2"><a href="#locations">Find an Outlet</a></li>
                         <li class="mb-2"><a href="#partner">Franchise Evaluation Portal</a></li>
+                        <li class="mb-2"><a href="#franchise-options">Franchise Packages &amp; Territory Rights</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
