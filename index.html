@@ -114,6 +114,16 @@
             height: 100% !important;
             border: 0;
         }
+        .map-frame {
+            aspect-ratio: 4 / 3;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--navy-line);
+            filter: grayscale(1) contrast(1.03);
+            transition: filter 0.4s ease;
+        }
+        .map-frame:hover, .map-frame:focus-within { filter: grayscale(0); }
+        .map-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
         .franchise-banner {
             background-color: var(--soft-white);
             border-left: 5px solid var(--primary-navy);
@@ -422,7 +432,7 @@
                 <div class="col-md-4">
                     <div class="menu-card card">
                         <div class="menu-img-wrapper">
-                            <img src="images/fishchips/SpicyCornFish.jpeg" alt="Fisherman's Platter">
+                            <img src="images/fishchips/SpicyCornFish.jpeg" alt="Spicy Corn Fish">
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Spicy Corn Fish</h3>
@@ -463,7 +473,7 @@
                 <div class="col-md-4">
                     <div class="menu-card card">
                         <div class="menu-img-wrapper">
-                            <img src="images/fishchips/FiishLolipop.jpeg" alt="Fisherman's Platter">
+                            <img src="images/fishchips/FishLolipop.jpeg" alt="Fish Lolipop">
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Fish Lolipop</h3>
@@ -504,7 +514,7 @@
                 <div class="col-md-4">
                     <div class="menu-card card">
                         <div class="menu-img-wrapper">
-                            <img src="images/fishchips/SpecialCombo.jpeg" alt="Fisherman's Platter">
+                            <img src="images/fishchips/SpecialCombo.jpeg" alt="Special Combo">
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Special Combo</h3>
@@ -532,11 +542,11 @@
                 <div class="col-md-4">
                     <div class="menu-card card">
                         <div class="menu-img-wrapper">
-                            <img src="images/fishchips/SpringPotato.jpeg" alt="Fish Fingers">
+                            <img src="images/fishchips/SpringPotato.jpeg" alt="Spring Potato">
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Spring Potato</h3>
-                            <p class="text-muted small">Indulge in the perfect crunch with our freshly spiraled, golden-brown Spring Potatoes.</p>
+                            <p class="text-muted small">Indulge in the perfect crunch with our freshly spiralled, golden-brown Spring Potatoes.</p>
                         </div>
                     </div>
                 </div>
@@ -545,7 +555,7 @@
                 <div class="col-md-4">
                     <div class="menu-card card">
                         <div class="menu-img-wrapper">
-                            <img src="images/fishchips/TawaFish_01.jpeg" alt="Fisherman's Platter">
+                            <img src="images/fishchips/TawaFish_01.jpeg" alt="Tawa Fish Fry">
                         </div>
                         <div class="card-body p-4 text-center">
                             <h3 class="h5 fw-bold mb-2">Tawa Fish Fry</h3>
@@ -574,7 +584,7 @@
                                 <span class="badge bg-success p-2 mb-2"><i class="bi bi-clock me-1"></i> Open Now: 11 AM - 11 PM</span>
                             </div>
                             <div class="col-sm-6">
-                                <div class="map-container d-flex align-items-center justify-content-center border">
+                                <div class="map-frame d-flex align-items-center justify-content-center border">
                                     <!-- Tip: You can paste your iframe code from Google Maps below -->
                                     <div class="text-center p-3 text-muted">
                                         <span class="x-small text-secondary">
@@ -597,7 +607,7 @@
                                 <span class="badge bg-success p-2 mb-2"><i class="bi bi-clock me-1"></i> Open Now: 12 PM - Midnight</span>
                             </div>
                             <div class="col-sm-6">
-                                <div class="map-container d-flex align-items-center justify-content-center border">
+                                <div class="map-frame d-flex align-items-center justify-content-center border">
                                     <div class="text-center p-3 text-muted">
                                          <span class="x-small text-secondary">
                                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16335.542898217758!2d80.84286476431457!3d16.04022707336233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a49f51573299d5d%3A0xbf92a56ebebb35db!2sFish%20and%20chips%20(FTP)!5e0!3m2!1sen!2sin!4v1788866756115!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -623,7 +633,7 @@
                                     <!-- Tip: You can paste your iframe code from Google Maps below -->
                                     <div class="text-center p-3 text-muted">
                                         <span class="x-small text-secondary">
-                                            <div class="map-container border">
+                                            <div class="map-frame border">
                                                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15403.760543462782!2d77.384415!3d15.161632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb6efe478cb616f%3A0x8a2a2aefd086ba45!2sDay%20catch!5e0!3m2!1sen!2sin!4v1788872168924!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                                             </div>                           
                                         </span>
@@ -648,7 +658,7 @@
                             <!-- Tip: You can paste your iframe code from Google Maps below -->
                              <div class="text-center p-3 text-muted">
                                     <span class="x-small text-secondary">
-                                        <div class="map-container border">
+                                        <div class="map-frame border">
                                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d959.7369320979655!2d78.038477!3d15.806710000000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dd9fff209891%3A0x7ba57ea634e490f1!2sBirla%20compound!5e0!3m2!1sen!2sin!4v1788872268785!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                                         </div>
                                     </span>
